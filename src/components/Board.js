@@ -59,7 +59,7 @@ const Board = () => {
     return (
         <div className="board-container">
             <div className="board">
-                {lists.length !== 0 && (
+            {lists.length !== 0 && (
                     <>
                         {lists.map((list) => (
                             <List 
@@ -72,7 +72,7 @@ const Board = () => {
             </div>
 
             <div className="board-button">
-                <button data-testid='list-add' className="list-add" onClick={openModal}>
+                <button data-testid='list-add' className="list-add" onClick={() => openModal()}>
                     <AddIcon style={{ fontSize: "2em", color: "black" }} />
                     <h2 className="list-add-text">Create a new list</h2>
                 </button>
@@ -90,7 +90,7 @@ const Board = () => {
                 <CloseIcon
                     data-testid='list-add-modal-close'
                     style={{ fontSize: "40px", color: "red", position: "absolute", top: 0, right: 0, padding: "10px" }}
-                    onClick={closeModal}
+                    onClick={() => closeModal()}
                 />
 
                 <input
@@ -105,7 +105,7 @@ const Board = () => {
                 <button
                     data-testid='create-list-button'
                     className="modal-button"
-                    onClick={addList}
+                    onClick={() => addList()}
                 >
                     Create list
                 </button>

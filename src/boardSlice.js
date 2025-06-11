@@ -18,7 +18,9 @@ export const boardSlice = createSlice({
                 ]
             }
         */
-        lists: []
+        lists: [
+            
+        ]
     },
     reducers: {
         createNewListReducer: (state, action) => {
