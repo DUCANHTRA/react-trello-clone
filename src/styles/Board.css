@@ -1,63 +1,128 @@
 .board-container {
-    display: flex;
-    flex: 13;
-    flex-direction: row;
-    background-color: #0b9669;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: calc(100vh - 80px);
+  padding: 20px;
+  gap: 20px;
 }
 
 .board {
-    display: flex;
-    flex: 13;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    background-color: #0b9669;
-    gap: 2%;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  background: transparent;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.board::-webkit-scrollbar {
+  height: 8px;
+}
+
+.board::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.board::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.board::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .board-button {
-    display: flex;
-    flex: 2;
-    background-color: #0b9669;
-    margin-top: 1.43%;
-    margin-left: 1.2%;
+  display: flex;
+  flex: 0 0 auto;
+  background: transparent;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10px;
 }
 
 .list-add {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 11vw;
-    height: 4vh;
-    background-color: #ebecf0;
-    margin-top: 2%;
-    margin-left: 1.2%;
-    margin-right: 1.2%;
-    border-radius: 2%;
-    border: none;
-    font-size: 9px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5e6c84;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.list-add:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.list-add:active {
+  transform: translateY(0);
 }
 
 .list-add-text {
-    text-align: center;
-    color: black;
-    margin-left: 5%;
+  text-align: center;
+  color: #5e6c84;
+  margin-left: 8px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .modal-input {
-    border: none;
-    border-bottom: 1px solid rgb(5, 5, 139);
-    outline: none;
-    width: 80%;
-    height: 7%;
-    font-size: 20px;
-    margin-bottom: 5%;
+  border: none;
+  border: 2px solid #e4e6ea;
+  border-radius: 8px;
+  outline: none;
+  width: 80%;
+  height: 50px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 0 16px;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+.modal-input:focus {
+  border-color: #0079bf;
+  box-shadow: 0 0 0 3px rgba(0, 121, 191, 0.1);
 }
 
 .modal-button {
-    width: 50%;
-    height: 17%;
-    font-size: 25px;
+  width: 60%;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #0079bf 0%, #005a8b 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 121, 191, 0.3);
+}
+
+.modal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 121, 191, 0.4);
+}
+
+.modal-button:active {
+  transform: translateY(0);
 }
