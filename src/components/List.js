@@ -77,20 +77,39 @@ const List = ({ list }) => {
                     <ModeEditIcon data-testid='list-title-edit' style={{ fontSize: "25px", marginLeft: "15%" }} onClick={() => openModal()}/>
                 </div>
             </div>
-            <div data-testid='list-data' className={list.tasks.length === 0 ? 'list-content-empty' : 'list-content'}>
-                {list.tasks.length === 0 ? (
-                    <h2> No tasks available! </h2>
-                ) : (
-                    list.tasks.map((task) => (
-                        <div key={task.taskId}>
-                            <Task
-                                list={list}
-                                task={task}
-                            />
-                        </div>
-                    ))
+            <Droppable key={list.listId} droppableId={list.listId} type="taskDrag">
+                {(provided) => (
+                    <div 
+                        className={list.tasks.length === 0 ? 'list-content-empty' : 'list-content'}
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
+                        data-testid='list-data'
+                    >
+                        {list.tasks.length === 0 ? (
+                            <h2> No tasks available! </h2>
+                        ) : (
+                            list.tasks.map((task, index) => (
+                                <Draggable draggableId={task.taskId} key={task.taskId} index={index}>
+                                    {(provided) => (
+                                        <div
+                                            {...provided.dragHandleProps}
+                                            {...provided.draggableProps}
+                                            ref={provided.innerRef}
+                                            data-testid='draggable-task'
+                                        >
+                                            <Task
+                                                list={list}
+                                                task={task}
+                                            />
+                                        </div>
+                                    )}
+                                </Draggable>
+                            ))
+                        )}
+                        {provided.placeholder}
+                    </div>
                 )}
-            </div>
+            </Droppable>
             <div className="list-edit">
                 <div className="list-edit-part-one">
                     <input
