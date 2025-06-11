@@ -79,6 +79,7 @@
   padding: 8px;
   gap: 8px;
   min-height: 200px;
+  max-height: calc(100vh - 300px);
 }
 
 .list-content::-webkit-scrollbar {
@@ -98,21 +99,42 @@
   background: rgba(0, 0, 0, 0.2);
 }
 
+/* Separate actions section */
 .list-edit {
   display: flex;
   flex-direction: column;
+  margin-top: auto;
   padding: 16px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  background: rgba(0, 0, 0, 0.02);
+  border-top: 2px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   border-radius: 0 0 12px 12px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .list-edit-part-one {
   display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.list-edit-part-one h3 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #172b4d;
+  text-align: center;
+}
+
+.add-task-row {
+  display: flex;
   flex-direction: row;
   align-items: center;
   gap: 8px;
-  margin-bottom: 12px;
 }
 
 .list-edit-input {
@@ -136,27 +158,55 @@
   color: #a5adba;
 }
 
-.list-edit-part-one svg {
-  color: #6b778c;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  padding: 6px;
+.add-task-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border: none;
   border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
 }
 
-.list-edit-part-one svg:hover {
-  color: #0079bf;
-  background: rgba(0, 121, 191, 0.1);
+.add-task-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4);
+}
+
+.add-task-button:active {
+  transform: translateY(0);
+}
+
+.add-task-button svg {
+  color: white;
+  font-size: 20px;
 }
 
 .list-edit-part-two {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.list-edit-part-two h3 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #172b4d;
+  text-align: center;
+  width: 100%;
 }
 
 .list-edit-button {
-  height: 36px;
+  height: 40px;
   width: 100%;
   border-radius: 6px;
   border: 2px solid #ea5a47;
@@ -166,6 +216,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: 8px;
 }
 
 .list-edit-button:hover {

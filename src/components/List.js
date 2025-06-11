@@ -74,7 +74,7 @@ const List = ({ list }) => {
                     <h2 data-testid='list-title' className="list-title-text"> { list.listTitle } </h2>
                 </div>
                 <div className="list-title-part-two">
-                    <ModeEditIcon data-testid='list-title-edit' style={{ fontSize: "25px", marginLeft: "15%" }} onClick={() => openModal()}/>
+                    <ModeEditIcon data-testid='list-title-edit' style={{ fontSize: "25px" }} onClick={() => openModal()}/>
                 </div>
             </div>
             <Droppable key={list.listId} droppableId={list.listId} type="taskDrag">
@@ -110,22 +110,37 @@ const List = ({ list }) => {
                     </div>
                 )}
             </Droppable>
+            
+            {/* Separate Actions Section */}
             <div className="list-edit">
                 <div className="list-edit-part-one">
-                    <input
-                        type="text"
-                        value={taskValue}
-                        onChange={(event) => setTaskValue(event.target.value)}
-                        placeholder="Add Task"
-                        className="list-edit-input"
-                        data-testid='list-task-add-section-input'
-                    />
-                    <AddIcon data-testid='list-task-add-section-add-task' onClick={() => addTask()} style={{ fontSize: "40px", marginLeft: "10%" }}/>
+                    <h3>Add New Task</h3>
+                    <div className="add-task-row">
+                        <input
+                            type="text"
+                            value={taskValue}
+                            onChange={(event) => setTaskValue(event.target.value)}
+                            placeholder="Enter task title..."
+                            className="list-edit-input"
+                            data-testid='list-task-add-section-input'
+                        />
+                        <button 
+                            className="add-task-button"
+                            onClick={() => addTask()}
+                            data-testid='list-task-add-section-add-task'
+                        >
+                            <AddIcon />
+                        </button>
+                    </div>
                 </div>
                 <div className="list-edit-part-two">
-                    <button data-testid='delete-list-button' className="list-edit-button" onClick={() => deleteList()}> Delete </button>
+                    <h3>List Actions</h3>
+                    <button data-testid='delete-list-button' className="list-edit-button" onClick={() => deleteList()}> 
+                        Delete List 
+                    </button>
                 </div>
             </div>
+
             <Modal 
                 isOpen={isModalOpen} 
                 ariaHideApp={false} 
