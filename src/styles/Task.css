@@ -1,0 +1,100 @@
+.task {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+    width: 90%;
+    min-height: 10%;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    border-radius: 2%;
+    background-color: #ffffff;
+}
+
+.task-title {
+    display: flex;
+    flex: 3;
+    overflow: auto;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 3%;
+}
+
+.task-title-text {
+    text-align: center;
+    font-size: 15px;
+    color: #909091;
+}
+
+.task-modify {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: #ffffff;
+}
+
+.task-modal-part-one {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-modal-part-two {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+}
+
+.task-part {
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.task-part-input {
+    width: 60%;
+    height: 37%;
+    margin-left: 3%;
+    font-size: 1.8em;
+    padding-left: 1.5%;
+    border: 1px solid rgb(5, 5, 139);
+}
+
+.description-part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 3;
+}
+
+.task-part-text-area {
+    width: 60%;
+    height: 75%;
+    margin-left: 3%;
+    font-size: 2em;
+    padding-left: 1.5%;
+    padding-top: 1%;
+    border: 1px solid rgb(5, 5, 139);
+    resize: none;
+}
+
+.task-modal-part-three {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-modal-button {
+    width: 30%;
+    height: 57%;
+    font-size: 20px;
+}

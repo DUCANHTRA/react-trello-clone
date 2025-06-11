@@ -1,0 +1,63 @@
+.board-container {
+    display: flex;
+    flex: 13;
+    flex-direction: row;
+    background-color: #0b9669;
+}
+
+.board {
+    display: flex;
+    flex: 13;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    background-color: #0b9669;
+    gap: 2%;
+}
+
+.board-button {
+    display: flex;
+    flex: 2;
+    background-color: #0b9669;
+    margin-top: 1.43%;
+    margin-left: 1.2%;
+}
+
+.list-add {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 11vw;
+    height: 4vh;
+    background-color: #ebecf0;
+    margin-top: 2%;
+    margin-left: 1.2%;
+    margin-right: 1.2%;
+    border-radius: 2%;
+    border: none;
+    font-size: 9px;
+}
+
+.list-add-text {
+    text-align: center;
+    color: black;
+    margin-left: 5%;
+}
+
+.modal-input {
+    border: none;
+    border-bottom: 1px solid rgb(5, 5, 139);
+    outline: none;
+    width: 80%;
+    height: 7%;
+    font-size: 20px;
+    margin-bottom: 5%;
+}
+
+.modal-button {
+    width: 50%;
+    height: 17%;
+    font-size: 25px;
+}
